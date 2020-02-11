@@ -6,13 +6,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="python关于list和tuple的各种方法, Hexo">
     <meta name="description" content="python关于list的各种方法1.初始化list
-1classmates = [&#39;Michael&#39;, &#39;Bob&#39;, &#39;Tracy&#39;]
-
+ classmates = [&#39;Michael&#39;, &#39;Bob&#39;, &#39;Tracy&#39;]
 2.获取list长度
-1len(classmates)
-
+len(classmates)
 3.追加元素至list末尾
-123&amp;gt;">
+&gt;&gt;&gt; classm">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +31,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -475,34 +473,36 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="python关于list的各种方法"><a href="#python关于list的各种方法" class="headerlink" title="python关于list的各种方法"></a>python关于list的各种方法</h2><p>1.初始化list</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classmates = [<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python"> classmates <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tracy'</span><span class="token punctuation">]</span></code></pre>
 <p>2.获取list长度</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(classmates)</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">len<span class="token punctuation">(</span>classmates<span class="token punctuation">)</span></code></pre>
 <p>3.追加元素至list末尾</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.append(<span class="string">'Adam'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>, <span class="string">'Adam'</span>]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> classmates<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'Adam'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> classmates
+<span class="token punctuation">[</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tracy'</span><span class="token punctuation">,</span> <span class="token string">'Adam'</span><span class="token punctuation">]</span></code></pre>
 <p>4.将元素插入至指定位置</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;classmates.insert(<span class="number">1</span>,<span class="string">'Jack'</span>)</span><br><span class="line">&gt;&gt;&gt;classmates</span><br><span class="line">[<span class="string">'Michael'</span>, <span class="string">'Jack'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>, <span class="string">'Adam'</span>]</span><br></pre></td></tr></table></figure>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>classmates<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Jack'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span>classmates
+<span class="token punctuation">[</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token string">'Jack'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tracy'</span><span class="token punctuation">,</span> <span class="token string">'Adam'</span><span class="token punctuation">]</span></code></pre>
 <p>5.删除list末尾的元素</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.pop()</span><br><span class="line"><span class="string">'Adam'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Michael'</span>, <span class="string">'Jack'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> classmates<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Adam'</span>
+<span class="token operator">>></span><span class="token operator">></span> classmates
+<span class="token punctuation">[</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token string">'Jack'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tracy'</span><span class="token punctuation">]</span></code></pre>
 <p>6.删除指定位置的元素</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.pop(<span class="number">1</span>)</span><br><span class="line"><span class="string">'Jack'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> classmates<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token string">'Jack'</span>
+<span class="token operator">>></span><span class="token operator">></span> classmates
+<span class="token punctuation">[</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tracy'</span><span class="token punctuation">]</span></code></pre>
 <p>7.list中的数据类型可以不同</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L=[<span class="string">'apple'</span>,<span class="number">12</span>,true]</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span>true<span class="token punctuation">]</span></code></pre>
 <p>8.list元素也可以是另一个list</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [<span class="string">'python'</span>, <span class="string">'java'</span>, [<span class="string">'asp'</span>, <span class="string">'php'</span>], <span class="string">'scheme'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(s)</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'python'</span><span class="token punctuation">,</span> <span class="token string">'java'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'asp'</span><span class="token punctuation">,</span> <span class="token string">'php'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'scheme'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token number">4</span></code></pre>
 <h2 id="TUPLE"><a href="#TUPLE" class="headerlink" title="TUPLE"></a>TUPLE</h2><p>tuple(元祖)，tuole一旦初始化就不能修改</p>
 <p><strong>初始化list用[]，初始化tuple用()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates = (<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>)</span><br></pre></td></tr></table></figure>
-
-
-
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> classmates <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tracy'</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -737,55 +737,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/31/c-you-yuan-han-shu-yu-you-yuan-lei/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="C++友元函数与友元类">
-                        
-                        <span class="card-title">C++友元函数与友元类</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一、友元概述举个现实中的例子，一般家庭都有客厅和卧室，我们将客厅比喻为公用部分（public），卧室比喻成私有部分（private），在类外只能访问公用成员，只有本类的函数才可以访问私有成员，我们可以把友元（friend）当做朋友，一般家庭
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/C/" class="post-category">
-                                    C++
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/01/31/chang-yong-pai-xu-suan-fa/">
                     <div class="card-image">
                         
@@ -805,9 +756,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -833,6 +784,61 @@
                     
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/31/python-guan-yu-list-he-tuple-de-ge-chong-fang-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="python关于list和tuple的各种方法">
+                        
+                        <span class="card-title">python关于list和tuple的各种方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            python关于list的各种方法1.初始化list
+ classmates = ['Michael', 'Bob', 'Tracy']
+2.获取list长度
+len(classmates)
+3.追加元素至list末尾
+>>> classm
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>

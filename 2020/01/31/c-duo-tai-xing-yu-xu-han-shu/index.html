@@ -27,7 +27,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -476,8 +476,53 @@
 <p>从系统实现的角度来看，多态性分为两类：静多态性和动多态性<br>静多态性是通过函数重载实现的，动多态性是通过虚函数实现的。</p>
 <h2 id="什么是虚函数"><a href="#什么是虚函数" class="headerlink" title="什么是虚函数"></a>什么是虚函数</h2><p>C++中的虚函数就是用来解决动态多态问题的，所谓虚函数，就是在基类声明函数是虚拟的，并不是实际存在的，然后在派生类中才正式定义此函数，在程序运行期间，用指针指向某一派生类对象，这样就能调用指针指向的派生类对象中的函数，而不对调用其他派生类中的函数。</p>
 <p>例如一个基类学生类有一个display方法，这个方法可以输出学生的基本信息，另外有一个派生类毕业生类，也有display方法，可以输出毕业生的基本信息</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		student(<span class="keyword">int</span> ,<span class="built_in">string</span>);             <span class="comment">//对信息进行初始化</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;           <span class="comment">//输出信息的函数</span></span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line">		<span class="keyword">int</span> num;      <span class="comment">//学号</span></span><br><span class="line">		<span class="built_in">string</span> name;      </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">student::student(<span class="keyword">int</span> n,<span class="built_in">string</span> nam)&#123;</span><br><span class="line">	num=n;</span><br><span class="line">	name=nam;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">student::display</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"num:"</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="string">"name:"</span>&lt;&lt;nam;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Graduate</span>:</span><span class="keyword">public</span> student&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		graduate(<span class="keyword">int</span> ,<span class="built_in">string</span>,<span class="keyword">int</span>);             <span class="comment">//对信息进行初始化</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;           <span class="comment">//输出信息的函数</span></span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line">		<span class="keyword">int</span> num;      <span class="comment">//学号</span></span><br><span class="line">		<span class="built_in">string</span> name;	</span><br><span class="line">		<span class="keyword">int</span> time;      </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">graduate::graduate(<span class="keyword">int</span> n,<span class="built_in">string</span> nam,<span class="keyword">int</span> tim)&#123;</span><br><span class="line">	num=n;</span><br><span class="line">	name=nam;</span><br><span class="line">	time=tim;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Graduate::display</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"num:"</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="string">"name:"</span>&lt;&lt;nam&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="string">"time:"</span>&lt;&lt;tim;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">Student <span class="title">stu</span><span class="params">(<span class="number">1</span>,<span class="string">"A"</span>)</span></span>;</span><br><span class="line">	<span class="function">Graduate <span class="title">gra</span><span class="params">(<span class="number">1</span>,<span class="string">"B"</span>,<span class="number">2020</span>)</span></span>;</span><br><span class="line">	Student *pt=&amp;stu;</span><br><span class="line">	pt-&gt;display();</span><br><span class="line">	*pt=&amp;gra;</span><br><span class="line">	pt-&gt;display();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">student</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">student</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">,</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">//对信息进行初始化</span>
+        <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//输出信息的函数</span>
+    <span class="token keyword">protected</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> num<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//学号</span>
+        string name<span class="token punctuation">;</span>      
+<span class="token punctuation">}</span>
 
+student<span class="token operator">::</span><span class="token function">student</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span>string nam<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    num<span class="token operator">=</span>n<span class="token punctuation">;</span>
+    name<span class="token operator">=</span>nam<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> student<span class="token operator">::</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"num:"</span><span class="token operator">&lt;&lt;</span>n<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span><span class="token string">"name:"</span><span class="token operator">&lt;&lt;</span>nam<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Graduate</span><span class="token operator">:</span><span class="token keyword">public</span> student<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">graduate</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">,</span>string<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">//对信息进行初始化</span>
+        <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//输出信息的函数</span>
+    <span class="token keyword">protected</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> num<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//学号</span>
+        string name<span class="token punctuation">;</span>    
+        <span class="token keyword">int</span> time<span class="token punctuation">;</span>      
+<span class="token punctuation">}</span>
+
+graduate<span class="token operator">::</span><span class="token function">graduate</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span>string nam<span class="token punctuation">,</span><span class="token keyword">int</span> tim<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    num<span class="token operator">=</span>n<span class="token punctuation">;</span>
+    name<span class="token operator">=</span>nam<span class="token punctuation">;</span>
+    time<span class="token operator">=</span>tim<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> Graduate<span class="token operator">::</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">"num:"</span><span class="token operator">&lt;&lt;</span>n<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span><span class="token string">"name:"</span><span class="token operator">&lt;&lt;</span>nam<span class="token operator">&lt;&lt;</span>endl<span class="token operator">&lt;&lt;</span><span class="token string">"time:"</span><span class="token operator">&lt;&lt;</span>tim<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Student <span class="token function">stu</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Graduate <span class="token function">gra</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">,</span><span class="token number">2020</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Student <span class="token operator">*</span>pt<span class="token operator">=</span><span class="token operator">&amp;</span>stu<span class="token punctuation">;</span>
+    pt<span class="token operator">-</span><span class="token operator">></span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>pt<span class="token operator">=</span><span class="token operator">&amp;</span>gra<span class="token punctuation">;</span>
+    pt<span class="token operator">-</span><span class="token operator">></span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>这段代码的结果为；<br>num:1<br>name:A</p>
 <p>num:1<br>name:B</p>
 <p>可以看出派生类Graduate中的display()方法并没有实现，实现的是student中的display方法，我们只需在student类中的display方法前面加一个virtual，就可以把基类中的函数声明为虚函数，第二次输出的结果就调用了派生类的display方法。</p>
@@ -500,11 +545,49 @@
 <li>在定义虚函数时，并不定义其函数体，即函数是空的，他的作用只是定义了一个虚函数名，具体功能由派生类实现</li>
 </ol>
 <h2 id="虚析构函数"><a href="#虚析构函数" class="headerlink" title="虚析构函数"></a>虚析构函数</h2><p>如果用new运算建立了一个临时对象，若基类中有虚构函数，并且定义了一个指向该基类的指针变量，在程序用delete运算符撤销对象时，会发生一个情况系统只会执行基类的析构函数，而不会执行派生类的析构函数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>&#123;</span>                   <span class="comment">//定义基类</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point()&#123;&#125;</span><br><span class="line">		~Point()&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"executing Pont destructor"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span>:</span><span class="keyword">public</span> Point&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Circle()&#123;&#125;</span><br><span class="line">		~Circle()&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"executing Circle destructor"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Point *p=<span class="keyword">new</span> Circle;</span><br><span class="line">	<span class="keyword">delete</span> p;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Point</span><span class="token punctuation">{</span>                   <span class="token comment" spellcheck="true">//定义基类</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token operator">~</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"executing Pont destructor"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token operator">:</span><span class="token keyword">public</span> Point<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token operator">~</span><span class="token function">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"executing Circle destructor"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Point <span class="token operator">*</span>p<span class="token operator">=</span><span class="token keyword">new</span> Circle<span class="token punctuation">;</span>
+    <span class="token keyword">delete</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>如果没有使用虚析构函数的话，即使是派生类对象进行delete操作，其运行结果为executing Pont destructor，并没有运行派生类的析构函数，所以我们要利用虚析构函数来完成对派生类的操作</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>&#123;</span>                   <span class="comment">//定义基类</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point()&#123;&#125;</span><br><span class="line">		virture ~Point()&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"executing Pont destructor"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span>:</span><span class="keyword">public</span> Point&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Circle()&#123;&#125;</span><br><span class="line">		~Circle()&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"executing Circle destructor"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Point *p=<span class="keyword">new</span> Circle;</span><br><span class="line">	<span class="keyword">delete</span> p;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Point</span><span class="token punctuation">{</span>                   <span class="token comment" spellcheck="true">//定义基类</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        virture <span class="token operator">~</span><span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"executing Pont destructor"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token operator">:</span><span class="token keyword">public</span> Point<span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token operator">~</span><span class="token function">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"executing Circle destructor"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Point <span class="token operator">*</span>p<span class="token operator">=</span><span class="token keyword">new</span> Circle<span class="token punctuation">;</span>
+    <span class="token keyword">delete</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>此时运行的结果为<br>executing Pont destructor<br>executing Circle destructor</p>
 <h2 id="纯虚函数"><a href="#纯虚函数" class="headerlink" title="纯虚函数"></a>纯虚函数</h2><p>virture 函数类型 函数名 （参数列表）=0</p>
 <p>（没什么用）</p>
@@ -755,7 +838,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python函数中的必选/默认/可变/关键字/命名参数一、默认参数123456def power(x, n=2):    s = 1    while n &gt; 0:        n = n - 1        s = s * x 
+                            Python函数中的必选/默认/可变/关键字/命名参数一、默认参数def power(x, n=2):
+    s = 1
+    while n > 0:
+        n = n - 1
+        s = s * x
+    r
                         
                     </div>
                     <div class="publish-info">
@@ -792,20 +880,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/31/python-zhong-ord-han-shu-he-chr-han-shu-yong-fa/">
+                <a href="/2020/01/31/c-you-yuan-han-shu-yu-you-yuan-lei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python中ord()函数和chr()函数用法">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="C++友元函数与友元类">
                         
-                        <span class="card-title">python中ord()函数和chr()函数用法</span>
+                        <span class="card-title">C++友元函数与友元类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：
-12345678&gt;&gt;&gt; ord(&#39;A&#39;)65&gt;&gt;&gt; ord(&#39;中&#39;)20013&
+                            一、友元概述举个现实中的例子，一般家庭都有客厅和卧室，我们将客厅比喻为公用部分（public），卧室比喻成私有部分（private），在类外只能访问公用成员，只有本类的函数才可以访问私有成员，我们可以把友元（friend）当做朋友，一般家庭
                         
                     </div>
                     <div class="publish-info">
@@ -816,8 +903,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
@@ -827,8 +914,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>

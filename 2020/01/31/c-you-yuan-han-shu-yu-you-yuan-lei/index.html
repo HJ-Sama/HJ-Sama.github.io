@@ -26,7 +26,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -471,9 +471,88 @@
 <p>在C++中，友元可以访问与其有好友关系的类中的私有成员，友元包括友元函数和友元类。</p>
 <h2 id="二、友元函数"><a href="#二、友元函数" class="headerlink" title="二、友元函数"></a>二、友元函数</h2><p>如果在本类以外的其他地方定义了一个函数（这个函数可以是不属于任何类的非成员函数，也可以是其他类的成员函数），在类体中用friend对其进行声明，此函数就称为类的友元函数。友元函数可以访问类中的私有成员。</p>
 <p>·</p>
-<h3 id="1-将普通函数声明为友元函数"><a href="#1-将普通函数声明为友元函数" class="headerlink" title="1.将普通函数声明为友元函数"></a>1.将普通函数声明为友元函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Time</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Time(<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">int</span>);</span><br><span class="line">		<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(Time &amp;)</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> hour;</span><br><span class="line">		<span class="keyword">int</span> minute;</span><br><span class="line">		<span class="keyword">int</span> sec;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Time::Time(<span class="keyword">int</span> h,<span class="keyword">int</span> m,<span class="keyword">int</span> s)&#123;</span><br><span class="line">	hour=h;</span><br><span class="line">	minute=m;</span><br><span class="line">	sec=s;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(Time &amp;t)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;t.hour&lt;&lt;<span class="string">":"</span>&lt;&lt;t.minute&lt;&lt;<span class="string">":"</span>&lt;&lt;t.sec&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">Time <span class="title">t1</span><span class="params">(<span class="number">10</span>,<span class="number">13</span>,<span class="number">56</span>)</span></span>;</span><br><span class="line">	display(t1);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-将普通函数声明为友元函数"><a href="#1-将普通函数声明为友元函数" class="headerlink" title="1.将普通函数声明为友元函数"></a>1.将普通函数声明为友元函数</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Time</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Time</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">friend</span> <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span>Time <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> hour<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> minute<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> sec<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Time<span class="token operator">::</span><span class="token function">Time</span><span class="token punctuation">(</span><span class="token keyword">int</span> h<span class="token punctuation">,</span><span class="token keyword">int</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    hour<span class="token operator">=</span>h<span class="token punctuation">;</span>
+    minute<span class="token operator">=</span>m<span class="token punctuation">;</span>
+    sec<span class="token operator">=</span>s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span>Time <span class="token operator">&amp;</span>t<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout<span class="token operator">&lt;&lt;</span>t<span class="token punctuation">.</span>hour<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token operator">&lt;&lt;</span>t<span class="token punctuation">.</span>minute<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token operator">&lt;&lt;</span>t<span class="token punctuation">.</span>sec<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Time <span class="token function">t1</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">56</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">display</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>可以看出display在定义的时候没有声明为Time域，所以display()不属于Time类的函数，它是非成员函数，不属于任何类，如果在Time类中，没有声明它为友元函数，它不能引用Time中的私有成员的，因为display()函数不是Time类的成员函数，所以没有this指针。</p>
-<h3 id="2-友元成员函数"><a href="#2-友元成员函数" class="headerlink" title="2.友元成员函数"></a>2.友元成员函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Time</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Time(<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">int</span>);</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(Date &amp;)</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> hour;</span><br><span class="line">		<span class="keyword">int</span> minute;</span><br><span class="line">		<span class="keyword">int</span> sec;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Date(<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">int</span>);</span><br><span class="line">		<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">Time::display</span><span class="params">(Date &amp;)</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> mouth;</span><br><span class="line">		<span class="keyword">int</span> day;</span><br><span class="line">		<span class="keyword">int</span> year;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Time::Time(<span class="keyword">int</span> h,<span class="keyword">int</span> m,<span class="keyword">int</span> s)&#123;</span><br><span class="line">	hour=h;</span><br><span class="line">	minute=m;</span><br><span class="line">	sec=s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Time::display</span><span class="params">(Date &amp;d)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;d.month&lt;&lt;<span class="string">"/"</span>&lt;&lt;d.day&lt;&lt;<span class="string">"/"</span>&lt;&lt;d.year&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;hour&lt;&lt;<span class="string">":"</span>&lt;&lt;minute&lt;&lt;<span class="string">":"</span>&lt;&lt;sec&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Date::Date(<span class="keyword">int</span> m,<span class="keyword">int</span> d,<span class="keyword">int</span> y)&#123;</span><br><span class="line">	mouth=m;</span><br><span class="line">	day=d;</span><br><span class="line">	year=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">Time <span class="title">t1</span><span class="params">(<span class="number">10</span>,<span class="number">13</span>,<span class="number">56</span>)</span></span>;</span><br><span class="line">	<span class="function">Date <span class="title">d1</span><span class="params">(<span class="number">12</span>,<span class="number">25</span>,<span class="number">2004</span>)</span></span>;</span><br><span class="line">	t1.display(d1);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">运行结果：</span><br><span class="line"><span class="number">12</span>/<span class="number">25</span>/<span class="number">2004</span></span><br><span class="line"><span class="number">10</span>:<span class="number">13</span>:<span class="number">56</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-友元成员函数"><a href="#2-友元成员函数" class="headerlink" title="2.友元成员函数"></a>2.友元成员函数</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Date</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Time</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Time</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span>Date <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> hour<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> minute<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> sec<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Date</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">Date</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">friend</span> <span class="token keyword">void</span> Time<span class="token operator">::</span><span class="token function">display</span><span class="token punctuation">(</span>Date <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> mouth<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> day<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> year<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Time<span class="token operator">::</span><span class="token function">Time</span><span class="token punctuation">(</span><span class="token keyword">int</span> h<span class="token punctuation">,</span><span class="token keyword">int</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    hour<span class="token operator">=</span>h<span class="token punctuation">;</span>
+    minute<span class="token operator">=</span>m<span class="token punctuation">;</span>
+    sec<span class="token operator">=</span>s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> Time<span class="token operator">::</span><span class="token function">display</span><span class="token punctuation">(</span>Date <span class="token operator">&amp;</span>d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout<span class="token operator">&lt;&lt;</span>d<span class="token punctuation">.</span>month<span class="token operator">&lt;&lt;</span><span class="token string">"/"</span><span class="token operator">&lt;&lt;</span>d<span class="token punctuation">.</span>day<span class="token operator">&lt;&lt;</span><span class="token string">"/"</span><span class="token operator">&lt;&lt;</span>d<span class="token punctuation">.</span>year<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>hour<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token operator">&lt;&lt;</span>minute<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token operator">&lt;&lt;</span>sec<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Date<span class="token operator">::</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> d<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    mouth<span class="token operator">=</span>m<span class="token punctuation">;</span>
+    day<span class="token operator">=</span>d<span class="token punctuation">;</span>
+    year<span class="token operator">=</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Time <span class="token function">t1</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">56</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Date <span class="token function">d1</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">2004</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t1<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span>d1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+运行结果：
+<span class="token number">12</span><span class="token operator">/</span><span class="token number">25</span><span class="token operator">/</span><span class="token number">2004</span>
+<span class="token number">10</span><span class="token operator">:</span><span class="token number">13</span><span class="token operator">:</span><span class="token number">56</span>
+</code></pre>
 <p>本来两个类是互不干扰的，但是display函数是Time类中的成员函数，它本来只能输出Time类中的数据，但是Date把他生命为朋友之后，他也可以访问Date类对象中的数据成员，但是参数需要时Date的对象。</p>
 <h2 id="三、友元类"><a href="#三、友元类" class="headerlink" title="三、友元类"></a>三、友元类</h2><p>不仅可以将一个函数声明为一个类的“朋友”，而且可以将一个类（B）声明为另一个类（A）的朋友，这时B类就是A类的友元类，友元类B中的所有函数都是A类的友元函数，可以访问A类中的所有成员</p>
 <p>在A类定义体中用以下的语句声明B类为其友元类：<br>friend B;</p>
@@ -713,20 +792,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/31/python-zhong-ord-han-shu-he-chr-han-shu-yong-fa/">
+                <a href="/2020/01/31/c-duo-tai-xing-yu-xu-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python中ord()函数和chr()函数用法">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="C++多态性与虚函数">
                         
-                        <span class="card-title">python中ord()函数和chr()函数用法</span>
+                        <span class="card-title">C++多态性与虚函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：
-12345678&gt;&gt;&gt; ord(&#39;A&#39;)65&gt;&gt;&gt; ord(&#39;中&#39;)20013&
+                            面向对象的三个特征：封装、继承和多态。
+什么是多态多态的意思是一个事物有多种形态，英文单词为polymorphism，向不同的对象发送同一个消息，不同的对象在接收时会产生不同的行为（方法）。也就是说，每个对象可以用自己的方式去相应共同的消息
                         
                     </div>
                     <div class="publish-info">
@@ -737,8 +816,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
@@ -748,8 +827,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
@@ -763,26 +842,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/31/python-guan-yu-list-he-tuple-de-ge-chong-fang-fa/">
+                <a href="/2020/01/31/python-zhong-ord-han-shu-he-chr-han-shu-yong-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="python关于list和tuple的各种方法">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="python中ord()函数和chr()函数用法">
                         
-                        <span class="card-title">python关于list和tuple的各种方法</span>
+                        <span class="card-title">python中ord()函数和chr()函数用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python关于list的各种方法1.初始化list
-1classmates = ['Michael', 'Bob', 'Tracy']
-
-2.获取list长度
-1len(classmates)
-
-3.追加元素至list末尾
-123&gt;
+                            Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：
+&gt;&gt;&gt; ord(&#39;A&#39;)
+65
+&gt;&gt;&gt; ord(&#39;中&#39;)
+20013
+&gt;&
                         
                     </div>
                     <div class="publish-info">
