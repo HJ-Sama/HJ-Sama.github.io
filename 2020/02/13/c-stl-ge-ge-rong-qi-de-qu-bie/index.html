@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python函数中的必选/默认/可变/关键字/命名参数, HJ-Sama">
-    <meta name="description" content="Python函数中的必选/默认/可变/关键字/命名参数一、默认参数def power(x, n=2):
-    s = 1
-    while n &gt; 0:
-        n = n - 1
-        s = s * x
-    r">
+    <meta name="keywords" content="C++ STL各个容器的区别, HJ-Sama">
+    <meta name="description" content="1.STL容器分类：STL的容器可以分为以下几个大类:一 顺序（序列）容器，　有vector, list, deque, string,stack( 适配器类), queue( 适配器类), priority queues( 适配器类)
+二">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python函数中的必选/默认/可变/关键字/命名参数 | HJ-Sama</title>
+    <title>C++ STL各个容器的区别 | HJ-Sama</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,7 +309,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python函数中的必选/默认/可变/关键字/命名参数</h1>
+                    <h1 class="description center-align post-title">C++ STL各个容器的区别</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +426,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/STL/">
+                                <span class="chip bg-color">STL</span>
                             </a>
                         
                     </div>
@@ -442,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/C/" class="post-category">
+                                C++
                             </a>
                         
                     </div>
@@ -455,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-10
+                    2020-02-13
                 </div>
                 
 
@@ -472,57 +472,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Python函数中的必选-默认-可变-关键字-命名参数"><a href="#Python函数中的必选-默认-可变-关键字-命名参数" class="headerlink" title="Python函数中的必选/默认/可变/关键字/命名参数"></a>Python函数中的必选/默认/可变/关键字/命名参数</h2><h3 id="一、默认参数"><a href="#一、默认参数" class="headerlink" title="一、默认参数"></a>一、默认参数</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">power</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    s <span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token keyword">while</span> n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
-        n <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span>
-        s <span class="token operator">=</span> s <span class="token operator">*</span> x
-    <span class="token keyword">return</span> s</code></pre>
-<p>n为默认参数，直接赋值</p>
-<p>默认参数设置的两个注意事项：<br>1.必选参数在前，默认参数在后，否则会报错<br>2.当函数有多个参数时，把变化大的参数放前面，变化小的参数放后面。变化小的参数就可以作为默认参数。</p>
-<h3 id="二、可变参数"><a href="#二、可变参数" class="headerlink" title="二、可变参数"></a>二、可变参数</h3><p>在python中，如果我们需要传入不确定数目的参数，就可以利用可变参数</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    sum <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        sum <span class="token operator">=</span> sum <span class="token operator">+</span> n <span class="token operator">*</span> n
-    <span class="token keyword">return</span> sum
+                <h2 id="1-STL容器分类："><a href="#1-STL容器分类：" class="headerlink" title="1.STL容器分类："></a>1.STL容器分类：</h2><p>STL的容器可以分为以下几个大类:<br>一 顺序（序列）容器，　有vector, list, deque, string,stack( 适配器类), queue( 适配器类), priority queues( 适配器类)</p>
+<p>二   关联容器,     有set, multiset, map, multimap, bitset,hash_set, hash_map, hash_multiset, hash_multimap</p>
+<h2 id="2-容器比较"><a href="#2-容器比较" class="headerlink" title="2.容器比较"></a>2.容器比较</h2><p><img src="https://img-blog.csdnimg.cn/2020021320164399.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODM0OTU5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3-各容器特点比较以及选择"><a href="#3-各容器特点比较以及选择" class="headerlink" title="3.各容器特点比较以及选择"></a>3.各容器特点比较以及选择</h2><p><img src="https://img-blog.csdnimg.cn/20200213201713882.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODM0OTU5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="4-各容器的图表说明"><a href="#4-各容器的图表说明" class="headerlink" title="4.各容器的图表说明"></a>4.各容器的图表说明</h2><p><img src="https://img-blog.csdnimg.cn/20200213201733141.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200213201742578.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200213201751802.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200213201803922.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200213201810583.png" alt="在这里插入图片描述"></p>
+<p>本篇文章来源:<a href="http://blog.csdn.net/longhuahaha/article/details/8365041" target="_blank" rel="noopener">http://blog.csdn.net/longhuahaha/article/details/8365041</a></p>
 
-<span class="token operator">>></span><span class="token operator">></span> calc<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token number">14</span>
-<span class="token operator">>></span><span class="token operator">></span> calc<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token number">84</span></code></pre>
-<p>调用的时候，需要先组装出一个list或tuple，但是利用可变参数，调用函数可以进行简化</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    sum <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        sum <span class="token operator">=</span> sum <span class="token operator">+</span> n <span class="token operator">*</span> n
-    <span class="token keyword">return</span> sum
-
-<span class="token operator">>></span><span class="token operator">></span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token number">14</span>
-<span class="token operator">>></span><span class="token operator">></span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
-<span class="token number">84</span></code></pre>
-<p>定义可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个*号。在函数内部，参数numbers接收到的是一个tuple，因此，函数代码完全不变。但是，调用该函数时，可以传入任意个参数，包括0个参数：</p>
-<h3 id="三、关键字参数"><a href="#三、关键字参数" class="headerlink" title="三、关键字参数"></a>三、关键字参数</h3><p>关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'name:'</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> <span class="token string">'age:'</span><span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token string">'other:'</span><span class="token punctuation">,</span> kw<span class="token punctuation">)</span></code></pre>
-<p>函数person除了必选参数name和age外，还接受关键字参数kw，在调用函数是，可以只传入必选参数</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> person<span class="token punctuation">(</span><span class="token string">'Michael'</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span>
-name<span class="token punctuation">:</span> Michael age<span class="token punctuation">:</span> <span class="token number">30</span> other<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
-<p>也可以传入任意个个数的关键字参数：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> person<span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> city<span class="token operator">=</span><span class="token string">'Beijing'</span><span class="token punctuation">)</span>
-name<span class="token punctuation">:</span> Bob age<span class="token punctuation">:</span> <span class="token number">35</span> other<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'Beijing'</span><span class="token punctuation">}</span>
-<span class="token operator">>></span><span class="token operator">></span> person<span class="token punctuation">(</span><span class="token string">'Adam'</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> gender<span class="token operator">=</span><span class="token string">'M'</span><span class="token punctuation">,</span> job<span class="token operator">=</span><span class="token string">'Engineer'</span><span class="token punctuation">)</span>
-name<span class="token punctuation">:</span> Adam age<span class="token punctuation">:</span> <span class="token number">45</span> other<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'gender'</span><span class="token punctuation">:</span> <span class="token string">'M'</span><span class="token punctuation">,</span> <span class="token string">'job'</span><span class="token punctuation">:</span> <span class="token string">'Engineer'</span><span class="token punctuation">}</span></code></pre>
-<p>关键字参数可以扩展函数的功能。</p>
-<h3 id="四、命名关键字"><a href="#四、命名关键字" class="headerlink" title="四、命名关键字"></a>四、命名关键字</h3><p>如果对参数数目进行限制的话，就需要命名关键字，例如对上述函数只接收city和job作为关键字参数</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> city<span class="token punctuation">,</span> job<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> city<span class="token punctuation">,</span> job<span class="token punctuation">)</span>
-
-<span class="token operator">>></span><span class="token operator">></span> person<span class="token punctuation">(</span><span class="token string">'Jack'</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> city<span class="token operator">=</span><span class="token string">'Beijing'</span><span class="token punctuation">,</span> job<span class="token operator">=</span><span class="token string">'Engineer'</span><span class="token punctuation">)</span>
-Jack <span class="token number">24</span> Beijing Engineer</code></pre>
-<p>和关键字参数*<em>kw不同，命名关键字参数需要一个特殊分隔符</em>，*后面的参数被视为命名关键字参数。命名关键字参数必须传入参数名，这和位置参数不同。如果没有传入参数名，调用将报错：</p>
-<h3 id="这几种参数也可以相互组合，灵活利用，熟知这几种参数传递方式，可以避免在参数调用中出错"><a href="#这几种参数也可以相互组合，灵活利用，熟知这几种参数传递方式，可以避免在参数调用中出错" class="headerlink" title="这几种参数也可以相互组合，灵活利用，熟知这几种参数传递方式，可以避免在参数调用中出错"></a>这几种参数也可以相互组合，灵活利用，熟知这几种参数传递方式，可以避免在参数调用中出错</h3>
             </div>
             <hr/>
 
@@ -547,7 +503,7 @@ Jack <span class="token number">24</span> Beijing Engineer</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.hjcode.cn/2020/02/10/python-han-shu-zhong-de-bi-xuan-mo-ren-ke-bian-guan-jian-zi-ming-ming-can-shu/">http://www.hjcode.cn/2020/02/10/python-han-shu-zhong-de-bi-xuan-mo-ren-ke-bian-guan-jian-zi-ming-ming-can-shu/</a>
+                    <a href="http://www.hjcode.cn/2020/02/13/c-stl-ge-ge-rong-qi-de-qu-bie/">http://www.hjcode.cn/2020/02/13/c-stl-ge-ge-rong-qi-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -585,8 +541,12 @@ Jack <span class="token number">24</span> Beijing Engineer</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/STL/">
+                                    <span class="chip bg-color">STL</span>
                                 </a>
                             
                         </div>
@@ -752,48 +712,53 @@ Jack <span class="token number">24</span> Beijing Engineer</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/10/python-xiang-guan-gao-ji-te-xing-de-zong-jie/">
+                <a href="/2020/02/13/c-stl-ge-ge-rong-qi-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="python相关高级特性的总结">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="C++ STL各个容器的区别">
                         
-                        <span class="card-title">python相关高级特性的总结</span>
+                        <span class="card-title">C++ STL各个容器的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、切片切片操作是对于一个list和tuple取其中部分的操作，操作步骤就是在一个已初始化完成的list或tuple后加[x:x:x]，x为任意数值，来对列表进行部分取值操作。
-L=[1,2,3,4,5,6,7,8,9]
-print(L[0
+                            1.STL容器分类：STL的容器可以分为以下几个大类:一 顺序（序列）容器，　有vector, list, deque, string,stack( 适配器类), queue( 适配器类), priority queues( 适配器类)
+二
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/STL/">
+                        <span class="chip bg-color">STL</span>
                     </a>
                     
                 </div>
@@ -807,25 +772,25 @@ print(L[0
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/31/c-duo-tai-xing-yu-xu-han-shu/">
+                <a href="/2020/02/13/c-xu-han-shu-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="C++多态性与虚函数">
+                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="C++虚函数表">
                         
-                        <span class="card-title">C++多态性与虚函数</span>
+                        <span class="card-title">C++虚函数表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            面向对象的三个特征：封装、继承和多态。
-什么是多态多态的意思是一个事物有多种形态，英文单词为polymorphism，向不同的对象发送同一个消息，不同的对象在接收时会产生不同的行为（方法）。也就是说，每个对象可以用自己的方式去相应共同的消息
+                            一.概述为了实现C++的多态，C++使用了一种动态绑定的技术。这个技术的核心是虚函数表（下文简称虚表）。本文介绍虚函数表是如何实现动态绑定的。
+二、类的虚表每个包含了虚函数的类都包含一个虚表。我们知道，当一个类（A）继承另一个类（B）时，类
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
                             </span>
                         <span class="publish-author">
                             
