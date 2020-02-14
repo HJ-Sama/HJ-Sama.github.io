@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python相关高级特性的总结, HJ-Sama">
-    <meta name="description" content="一、切片切片操作是对于一个list和tuple取其中部分的操作，操作步骤就是在一个已初始化完成的list或tuple后加[x:x:x]，x为任意数值，来对列表进行部分取值操作。
-L=[1,2,3,4,5,6,7,8,9]
-print(L[0">
+    <meta name="keywords" content="LeetCode 1. 两数之和, HJ-Sama">
+    <meta name="description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+示例:
+给定 nums = [">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@ print(L[0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python相关高级特性的总结 | HJ-Sama</title>
+    <title>LeetCode 1. 两数之和 | HJ-Sama</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,7 +311,7 @@ print(L[0">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python相关高级特性的总结</h1>
+                    <h1 class="description center-align post-title">LeetCode 1. 两数之和</h1>
                 </div>
             </div>
         </div>
@@ -427,8 +428,8 @@ print(L[0">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/LeetCode/">
+                                <span class="chip bg-color">LeetCode</span>
                             </a>
                         
                     </div>
@@ -439,8 +440,8 @@ print(L[0">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/LeetCode/" class="post-category">
+                                LeetCode
                             </a>
                         
                     </div>
@@ -452,7 +453,7 @@ print(L[0">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-10
+                    2020-02-12
                 </div>
                 
 
@@ -469,58 +470,49 @@ print(L[0">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、切片"><a href="#一、切片" class="headerlink" title="一、切片"></a>一、切片</h2><p>切片操作是对于一个list和tuple取其中部分的操作，操作步骤就是在一个已初始化完成的list或tuple后加[x:x:x]，x为任意数值，来对列表进行部分取值操作。</p>
-<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>L<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>示例:</p>
+<pre class=" language-cpp"><code class="language-cpp">给定 nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">9</span>
 
-输出
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span></code></pre>
-<p>利用上述代码可以取list前三个元素，当然索引取负数也是可以的</p>
-<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>L<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+因为 nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">7</span> <span class="token operator">=</span> <span class="token number">9</span>
+所以返回 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span></code></pre>
+<h2 id="一、暴力法"><a href="#一、暴力法" class="headerlink" title="一、暴力法"></a>一、暴力法</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">twoSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len<span class="token operator">=</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-输出
-<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span></code></pre>
-<p>我们也可以在100个数字中取偶数</p>
-<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span>list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>L<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<p>对于切片操作的三个参数，第一个为起始索引，第二个为终止索引，第三个为步长（一次取值的间隔）</p>
-<h2 id="二、迭代"><a href="#二、迭代" class="headerlink" title="二、迭代"></a>二、迭代</h2><p>如果给定一个list或tuple，我们可以通过for循环来遍历它，这种遍历称为迭代，在Python中通过for….in来完成的。</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> key <span class="token keyword">in</span> d<span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-a
-c
-b</code></pre>
-<p>如果想迭代取值，可以用for value in d.values()<br>如果下标和值都取的话，可以用for k,v in d.items()</p>
-<p>如果要对list实现类似Java那样的下标循环怎么办？Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> i<span class="token punctuation">,</span> value <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token number">0</span> A
-<span class="token number">1</span> B
-<span class="token number">2</span> C</code></pre>
-<h2 id="三、列表生成器"><a href="#三、列表生成器" class="headerlink" title="三、列表生成器"></a>三、列表生成器</h2><p>列表生成式即List Comprehensions，是Python内置的非常简单却强大的可以用来创建list的生成式。</p>
-<p>要生成list[1,2,3,4,5,6,7,8,9,10]可以用list(range(1,11));</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span></code></pre>
-<p>但如果要生成[1x1, 2x2, 3x3, …, 10x10]怎么做？方法一是循环：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> L <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>    L<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x <span class="token operator">*</span> x<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token operator">>></span><span class="token operator">></span> L
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span></code></pre>
-<p>但是循环太繁琐，而列表生成式则可以用一行语句代替循环生成上面的list：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span>x <span class="token operator">*</span> x <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span></code></pre>
-<p>for循环后面还可以加上if判断，这样我们就可以筛选出仅偶数的平方：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span>x <span class="token operator">*</span> x <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">if</span> x <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span></code></pre>
-<p>还可以使用两层循环，可以生成全排列：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span>m <span class="token operator">+</span> n <span class="token keyword">for</span> m <span class="token keyword">in</span> <span class="token string">'ABC'</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token string">'XYZ'</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token string">'AX'</span><span class="token punctuation">,</span> <span class="token string">'AY'</span><span class="token punctuation">,</span> <span class="token string">'AZ'</span><span class="token punctuation">,</span> <span class="token string">'BX'</span><span class="token punctuation">,</span> <span class="token string">'BY'</span><span class="token punctuation">,</span> <span class="token string">'BZ'</span><span class="token punctuation">,</span> <span class="token string">'CX'</span><span class="token punctuation">,</span> <span class="token string">'CY'</span><span class="token punctuation">,</span> <span class="token string">'CZ'</span><span class="token punctuation">]</span></code></pre>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>target<span class="token operator">==</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">{</span>i<span class="token punctuation">,</span>j<span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>这个方法的思路就是按照顺序，一个一个尝试，然后找到正确的答案，时间复杂度O(n²)</p>
+<h2 id="二、哈希映射"><a href="#二、哈希映射" class="headerlink" title="二、哈希映射"></a>二、哈希映射</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">twoSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m<span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>target<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">!=</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//m中存在对应的键值</span>
+                <span class="token keyword">return</span> <span class="token punctuation">{</span>m<span class="token punctuation">[</span>target<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//因为i为较大的元素，此时添加进去的键值都还小于i，所以i在后面</span>
+
+            m<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//添加</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>这个方法的思路就是先建立一个哈希表，如果target-nums[i]的值与哈希表内值没有匹配，就放入哈希表，直到target-nums[i]的值找到与哈希表中有匹配项，返回所在的位置。</p>
 
             </div>
             <hr/>
@@ -546,7 +538,7 @@ b</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.hjcode.cn/2020/02/10/python-xiang-guan-gao-ji-te-xing-de-zong-jie/">http://www.hjcode.cn/2020/02/10/python-xiang-guan-gao-ji-te-xing-de-zong-jie/</a>
+                    <a href="http://www.hjcode.cn/2020/02/12/leetcode-1.liang-shu-zhi-he/">http://www.hjcode.cn/2020/02/12/leetcode-1.liang-shu-zhi-he/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -584,8 +576,8 @@ b</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/LeetCode/">
+                                    <span class="chip bg-color">LeetCode</span>
                                 </a>
                             
                         </div>
@@ -755,84 +747,29 @@ b</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/10/python-han-shu-zhong-de-bi-xuan-mo-ren-ke-bian-guan-jian-zi-ming-ming-can-shu/">
+                <a href="/2020/02/12/c-zhong-ge-ge-gai-nian-de-yi-tong-yu-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Python函数中的必选/默认/可变/关键字/命名参数">
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="C++中各个概念的异同与区别">
                         
-                        <span class="card-title">Python函数中的必选/默认/可变/关键字/命名参数</span>
+                        <span class="card-title">C++中各个概念的异同与区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python函数中的必选/默认/可变/关键字/命名参数一、默认参数def power(x, n=2):
-    s = 1
-    while n > 0:
-        n = n - 1
-        s = s * x
-    r
+                            1.指针与引用的区别
+指针有自己的一块空间，而引用只是一个别名
+使用sizeof函数，指针大小为4个字节，而引用的大小是被引用对象的大小
+指针可以被初始化为NULL，但引用必须是一个对象
+作为参数传递是，指针需要被解引用才可以对对象进行操作
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/01/31/c-zhong-stl-de-rong-qi-gua-pei-qi-yi-ji-ge-rong-qi-de-fang-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="C++中STL的容器适配器以及各容器的方法">
-                        
-                        <span class="card-title">C++中STL的容器适配器以及各容器的方法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一.容器适配器1.stack需要引入的头文件：
-#include&lt;stack>
-初始化方式：
-stack&lt;int> stk;
-成员函数介绍：
-stk.empty();    //判断stack是否为空，为空返回true，否则返回
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -852,12 +789,60 @@ stk.empty();    //判断stack是否为空，为空返回true，否则返回
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/STL/">
-                        <span class="chip bg-color">STL</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/12/guan-yu-er-cha-shu-de-xiang-guan-xing-zhi-yu-man-er-cha-shu-wan-quan-er-cha-shu-de-ding-yi-yi-ji-er-cha-shu-de-cun-chu-jie-gou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="关于二叉树的相关性质与满二叉树_完全二叉树的定义以及二叉树的存储结构">
+                        
+                        <span class="card-title">关于二叉树的相关性质与满二叉树_完全二叉树的定义以及二叉树的存储结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、二叉树的性质性质一：在二叉树的第i层上至多有2＇(i-1)次方个节点
+性质二：深度为k的二叉树至多有2(k次方)-1个节点
+性质三：对任意一颗二叉树T，如果其终端节点数为N，度为2的节点数为N2,则N=N2+1
+二、满二叉树与完全二叉树
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
