@@ -506,7 +506,19 @@ public:
 <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>单链表反转（不建立新的链表）<br>link InvertList(link head){<br>    link pre,phead,temp;<br>    phead=head;<br>    pre=NULL;<br>    while(phead!=NULL){<br>        temp=pre;<br>        pre=phead;<br>        phead=phead-.next;<br>        pre-&gt;next=templ<br>}<br>        return pre;<br>}</p>
+<p>单链表反转（不建立新的链表）</p>
+<pre class=" language-cpp"><code class="language-cpp">link <span class="token function">InvertList</span><span class="token punctuation">(</span>link head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    link pre<span class="token punctuation">,</span>phead<span class="token punctuation">,</span>temp<span class="token punctuation">;</span>
+    phead<span class="token operator">=</span>head<span class="token punctuation">;</span>
+    pre<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>phead<span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        temp<span class="token operator">=</span>pre<span class="token punctuation">;</span>
+        pre<span class="token operator">=</span>phead<span class="token punctuation">;</span>
+        phead<span class="token operator">=</span>phead<span class="token operator">-</span><span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        pre<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">=</span>templ
+<span class="token punctuation">}</span>
+        <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200222154308600.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200222154314474.png" alt="在这里插入图片描述"></p>
 
             </div>
