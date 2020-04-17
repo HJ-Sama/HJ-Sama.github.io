@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode 1. 两数之和, HJ-Sama">
-    <meta name="description" content="题目给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
-示例:
-给定 nums = [">
+    <meta name="keywords" content="什么是堆、栈？堆和栈的区别, HJ-Sama">
+    <meta name="description" content="栈区(stack)：由编译器自动分配释放，存放函数的参数值、局部变量值等。堆区(heap)：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收
+例程//main.cpp
+int a = 0; //全局初始化区
+int a = 0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode 1. 两数之和 | HJ-Sama</title>
+    <title>什么是堆、栈？堆和栈的区别 | HJ-Sama</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +306,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode 1. 两数之和</h1>
+                    <h1 class="description center-align post-title">什么是堆、栈？堆和栈的区别</h1>
                 </div>
             </div>
         </div>
@@ -428,8 +428,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -440,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode/" class="post-category">
-                                LeetCode
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -453,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-04-17
                 </div>
                 
 
@@ -470,49 +470,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
-<p>示例:</p>
-<pre class=" language-cpp"><code class="language-cpp">给定 nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">9</span>
-
-因为 nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">7</span> <span class="token operator">=</span> <span class="token number">9</span>
-所以返回 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span></code></pre>
-<h2 id="一、暴力法"><a href="#一、暴力法" class="headerlink" title="一、暴力法"></a>一、暴力法</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">twoSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> len<span class="token operator">=</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>target<span class="token operator">==</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    <span class="token keyword">return</span> <span class="token punctuation">{</span>i<span class="token punctuation">,</span>j<span class="token punctuation">}</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-
-            <span class="token punctuation">}</span>
-
-        <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-<p>这个方法的思路就是按照顺序，一个一个尝试，然后找到正确的答案，时间复杂度O(n²)</p>
-<h2 id="二、哈希映射"><a href="#二、哈希映射" class="headerlink" title="二、哈希映射"></a>二、哈希映射</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">twoSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m<span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>target<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">!=</span>m<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//m中存在对应的键值</span>
-                <span class="token keyword">return</span> <span class="token punctuation">{</span>m<span class="token punctuation">[</span>target<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//因为i为较大的元素，此时添加进去的键值都还小于i，所以i在后面</span>
-
-            m<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//添加</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-<p>这个方法的思路就是先建立一个哈希表，如果target-nums[i]的值与哈希表内值没有匹配，就放入哈希表，直到target-nums[i]的值找到与哈希表中有匹配项，返回所在的位置。</p>
+                <p><strong>栈区(stack)：由编译器自动分配释放，存放函数的参数值、局部变量值等。<br>堆区(heap)：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收</strong></p>
+<h2 id="例程"><a href="#例程" class="headerlink" title="例程"></a>例程</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//main.cpp</span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//全局初始化区</span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//全局初始化区</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>p1<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//全局未初始化区</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈</span>
+    <span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>p2<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//栈</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token string">"123456"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//123456\0在常量区，p3在栈上。</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//全局（静态）初始化区</span>
+    p1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    p2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//分配得来得10和20字节的区域就在堆区。</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> <span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//123456\0放在常量区，编译器可能会将它与p3所指向的"123456"优化成一个地方。</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="申请方式"><a href="#申请方式" class="headerlink" title="申请方式"></a>申请方式</h2><p>栈：系统自动分配<br>堆：需要程序员自己申请，并指明大小</p>
+<h2 id="申请大小限制"><a href="#申请大小限制" class="headerlink" title="申请大小限制"></a>申请大小限制</h2><p>栈：向低地址扩展的数据结构，一块连续的内存区域，栈顶的地址和栈的容量是系统预先规定好的，栈大小是2M，如果申请空间超过栈的剩余空间，将提示overflow。</p>
+<p>堆：向高地址扩展，不连续的内存区域，大小受限于计算机系统的虚拟内存</p>
 
             </div>
             <hr/>
@@ -538,7 +514,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.hjcode.cn/2020/02/12/leetcode-1.liang-shu-zhi-he/">http://www.hjcode.cn/2020/02/12/leetcode-1.liang-shu-zhi-he/</a>
+                    <a href="http://www.hjcode.cn/2020/04/17/shi-me-shi-dui-zhan-dui-he-zhan-de-qu-bie/">http://www.hjcode.cn/2020/04/17/shi-me-shi-dui-zhan-dui-he-zhan-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +552,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LeetCode/">
-                                    <span class="chip bg-color">LeetCode</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -743,48 +719,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/12/leetcode-2.liang-shu-xiang-jia/">
+                <a href="/2020/04/17/shi-me-shi-dui-zhan-dui-he-zhan-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="LeetCode 2. 两数相加">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="什么是堆、栈？堆和栈的区别">
                         
-                        <span class="card-title">LeetCode 2. 两数相加</span>
+                        <span class="card-title">什么是堆、栈？堆和栈的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目：两数相加给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
-如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
-您可以假设除了数字 0
+                            栈区(stack)：由编译器自动分配释放，存放函数的参数值、局部变量值等。堆区(heap)：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收
+例程//main.cpp
+int a = 0; //全局初始化区
+int a = 0
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category">
-                                    LeetCode
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -798,35 +777,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/12/c-zhong-ge-ge-gai-nian-de-yi-tong-yu-qu-bie/">
+                <a href="/2020/03/20/shen-du-xue-xi-bi-ji-yi-shen-jing-wang-luo-he-shen-du-xue-xi-neural-networks-and-deep-learning/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="C++中各个概念的异同与区别">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="深度学习笔记（一）——神经网络和深度学习(Neural Networks and Deep Learning)">
                         
-                        <span class="card-title">C++中各个概念的异同与区别</span>
+                        <span class="card-title">深度学习笔记（一）——神经网络和深度学习(Neural Networks and Deep Learning)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.指针与引用的区别
-指针有自己的一块空间，而引用只是一个别名
-使用sizeof函数，指针大小为4个字节，而引用的大小是被引用对象的大小
-指针可以被初始化为NULL，但引用必须是一个对象
-作为参数传递是，指针需要被解引用才可以对对象进行操作
+                            什么是神经网络？(What is a Neural Network)我们常常用深度学习这个术语来指训练神经网络的过程。有时它指的是特别大规模的神经网络训练。那么神经网络究竟是什么呢？在这个视频中，我会讲解一些直观的基础知识。
+让我们从一个房
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C++
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -836,8 +812,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
                 </div>
