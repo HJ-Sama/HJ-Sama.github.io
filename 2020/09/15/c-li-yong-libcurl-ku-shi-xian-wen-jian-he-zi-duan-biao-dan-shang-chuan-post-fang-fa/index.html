@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python相关高级特性的总结, HJ-Sama">
-    <meta name="description" content="一、切片切片操作是对于一个list和tuple取其中部分的操作，操作步骤就是在一个已初始化完成的list或tuple后加[x:x:x]，x为任意数值，来对列表进行部分取值操作。
-L=[1,2,3,4,5,6,7,8,9]
-print(L[0">
+    <meta name="keywords" content="C++利用libcurl库实现文件和字段表单上传（POST方法）, HJ-Sama">
+    <meta name="description" content="最近在用libcurl实现文件和字段上传至Django服务器
+#include &amp;lt;iostream&gt;
+#include &amp;lt;curl/curl.h&gt;
+#include &amp;lt;string.h&gt;
+
+using namespace ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@ print(L[0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python相关高级特性的总结 | HJ-Sama</title>
+    <title>C++利用libcurl库实现文件和字段表单上传（POST方法） | HJ-Sama</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +308,12 @@ print(L[0">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python相关高级特性的总结</h1>
+                    <h1 class="description center-align post-title">C++利用libcurl库实现文件和字段表单上传（POST方法）</h1>
                 </div>
             </div>
         </div>
@@ -427,8 +430,12 @@ print(L[0">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/libcurl/">
+                                <span class="chip bg-color">libcurl</span>
                             </a>
                         
                     </div>
@@ -439,8 +446,8 @@ print(L[0">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/C/" class="post-category">
+                                C++
                             </a>
                         
                     </div>
@@ -452,7 +459,7 @@ print(L[0">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-10
+                    2020-09-15
                 </div>
                 
 
@@ -469,58 +476,77 @@ print(L[0">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、切片"><a href="#一、切片" class="headerlink" title="一、切片"></a>一、切片</h2><p>切片操作是对于一个list和tuple取其中部分的操作，操作步骤就是在一个已初始化完成的list或tuple后加[x:x:x]，x为任意数值，来对列表进行部分取值操作。</p>
-<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>L<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <p>最近在用libcurl实现文件和字段上传至Django服务器</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;curl/curl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
 
-输出
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span></code></pre>
-<p>利用上述代码可以取list前三个元素，当然索引取负数也是可以的</p>
-<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>L<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//回调函数  得到响应内容</span>
+<span class="token keyword">int</span> <span class="token function">write_data</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> buffer<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">,</span> <span class="token keyword">int</span> nmemb<span class="token punctuation">,</span> <span class="token keyword">void</span><span class="token operator">*</span> userp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span>string<span class="token operator">*</span> str <span class="token operator">=</span> <span class="token keyword">dynamic_cast</span><span class="token operator">&lt;</span>std<span class="token operator">::</span>string<span class="token operator">*</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">(</span>std<span class="token operator">::</span>string<span class="token operator">*</span><span class="token punctuation">)</span>userp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    str<span class="token operator">-</span><span class="token operator">></span><span class="token function">append</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>buffer<span class="token punctuation">,</span> size <span class="token operator">*</span> nmemb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> nmemb<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">upload</span><span class="token punctuation">(</span>string url<span class="token punctuation">,</span> string<span class="token operator">&amp;</span> body<span class="token punctuation">,</span> string<span class="token operator">*</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-输出
-<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span></code></pre>
-<p>我们也可以在100个数字中取偶数</p>
-<pre class=" language-python"><code class="language-python">L<span class="token operator">=</span>list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>L<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<p>对于切片操作的三个参数，第一个为起始索引，第二个为终止索引，第三个为步长（一次取值的间隔）</p>
-<h2 id="二、迭代"><a href="#二、迭代" class="headerlink" title="二、迭代"></a>二、迭代</h2><p>如果给定一个list或tuple，我们可以通过for循环来遍历它，这种遍历称为迭代，在Python中通过for….in来完成的。</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> key <span class="token keyword">in</span> d<span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-a
-c
-b</code></pre>
-<p>如果想迭代取值，可以用for value in d.values()<br>如果下标和值都取的话，可以用for k,v in d.items()</p>
-<p>如果要对list实现类似Java那样的下标循环怎么办？Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> i<span class="token punctuation">,</span> value <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token number">0</span> A
-<span class="token number">1</span> B
-<span class="token number">2</span> C</code></pre>
-<h2 id="三、列表生成器"><a href="#三、列表生成器" class="headerlink" title="三、列表生成器"></a>三、列表生成器</h2><p>列表生成式即List Comprehensions，是Python内置的非常简单却强大的可以用来创建list的生成式。</p>
-<p>要生成list[1,2,3,4,5,6,7,8,9,10]可以用list(range(1,11));</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span></code></pre>
-<p>但如果要生成[1x1, 2x2, 3x3, …, 10x10]怎么做？方法一是循环：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> L <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>    L<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x <span class="token operator">*</span> x<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token operator">>></span><span class="token operator">></span> L
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span></code></pre>
-<p>但是循环太繁琐，而列表生成式则可以用一行语句代替循环生成上面的list：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span>x <span class="token operator">*</span> x <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span></code></pre>
-<p>for循环后面还可以加上if判断，这样我们就可以筛选出仅偶数的平方：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span>x <span class="token operator">*</span> x <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">if</span> x <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span></code></pre>
-<p>还可以使用两层循环，可以生成全排列：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">[</span>m <span class="token operator">+</span> n <span class="token keyword">for</span> m <span class="token keyword">in</span> <span class="token string">'ABC'</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token string">'XYZ'</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token string">'AX'</span><span class="token punctuation">,</span> <span class="token string">'AY'</span><span class="token punctuation">,</span> <span class="token string">'AZ'</span><span class="token punctuation">,</span> <span class="token string">'BX'</span><span class="token punctuation">,</span> <span class="token string">'BY'</span><span class="token punctuation">,</span> <span class="token string">'BZ'</span><span class="token punctuation">,</span> <span class="token string">'CX'</span><span class="token punctuation">,</span> <span class="token string">'CY'</span><span class="token punctuation">,</span> <span class="token string">'CZ'</span><span class="token punctuation">]</span></code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    std<span class="token operator">::</span>string body<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>string response<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> status_code <span class="token operator">=</span> <span class="token function">upload</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1:8000/subjects/"</span><span class="token punctuation">,</span> body<span class="token punctuation">,</span> <span class="token operator">&amp;</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//示例采用本地服务器</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>status_code <span class="token operator">!=</span> CURLcode<span class="token operator">::</span>CURLE_OK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> body <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> response <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">upload</span><span class="token punctuation">(</span>string url<span class="token punctuation">,</span> string<span class="token operator">&amp;</span> body<span class="token punctuation">,</span> string<span class="token operator">*</span> response<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    CURL<span class="token operator">*</span> curl<span class="token punctuation">;</span>
+    CURLcode ret<span class="token punctuation">;</span>
+    curl <span class="token operator">=</span> <span class="token function">curl_easy_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> curl_httppost<span class="token operator">*</span> post <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> curl_httppost<span class="token operator">*</span> last <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>curl<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">curl_easy_setopt</span><span class="token punctuation">(</span>curl<span class="token punctuation">,</span> CURLOPT_URL<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span>url<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//指定url</span>
+
+        <span class="token function">curl_formadd</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>post<span class="token punctuation">,</span> <span class="token operator">&amp;</span>last<span class="token punctuation">,</span> CURLFORM_PTRNAME<span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> CURLFORM_PTRCONTENTS<span class="token punctuation">,</span> <span class="token string">"ggggggg"</span><span class="token punctuation">,</span> CURLFORM_END<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//form-data key(path) 和 value(device_cover)</span>
+        <span class="token function">curl_formadd</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>post<span class="token punctuation">,</span> <span class="token operator">&amp;</span>last<span class="token punctuation">,</span> CURLFORM_PTRNAME<span class="token punctuation">,</span> <span class="token string">"sex"</span><span class="token punctuation">,</span> CURLFORM_PTRCONTENTS<span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">,</span> CURLFORM_END<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//form-data key(path) 和 value(device_cover)</span>
+        <span class="token function">curl_formadd</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>post<span class="token punctuation">,</span> <span class="token operator">&amp;</span>last<span class="token punctuation">,</span> CURLFORM_PTRNAME<span class="token punctuation">,</span> <span class="token string">"file"</span><span class="token punctuation">,</span> CURLFORM_FILE<span class="token punctuation">,</span> <span class="token string">"1.pdf"</span><span class="token punctuation">,</span> CURLFORM_FILENAME<span class="token punctuation">,</span> <span class="token string">"1.pdf"</span><span class="token punctuation">,</span> CURLFORM_END<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">curl_easy_setopt</span><span class="token punctuation">(</span>curl<span class="token punctuation">,</span> CURLOPT_HTTPPOST<span class="token punctuation">,</span> post<span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">//构造post参数   </span>
+        <span class="token function">curl_easy_setopt</span><span class="token punctuation">(</span>curl<span class="token punctuation">,</span> CURLOPT_WRITEFUNCTION<span class="token punctuation">,</span> write_data<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//绑定相应</span>
+        <span class="token function">curl_easy_setopt</span><span class="token punctuation">(</span>curl<span class="token punctuation">,</span> CURLOPT_WRITEDATA<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//绑定响应内容的地址</span>
+
+        ret <span class="token operator">=</span> <span class="token function">curl_easy_perform</span><span class="token punctuation">(</span>curl<span class="token punctuation">)</span><span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">//执行请求</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ret <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">curl_easy_cleanup</span><span class="token punctuation">(</span>curl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>利用libcurl实现文件和字段的表单上传</p>
+<p>代码可以直接复用，地址改成服务器地址</p>
+<p>curl_formadd(&amp;post, &amp;last, CURLFORM_PTRNAME, “name”, CURLFORM_PTRCONTENTS, “ggggggg”, CURLFORM_END); 实现提交字段表单，可以根据服务器字段进行修改</p>
+<p>curl_formadd(&amp;post, &amp;last, CURLFORM_PTRNAME, “file”, CURLFORM_FILE, “1.pdf”, CURLFORM_FILENAME, “1.pdf”, CURLFORM_END); 实现文件上传，第二个字段是文件路径，第三个字段是上传后的文件名称</p>
+<p>其他代码没有什么需要改动的</p>
+<p>利用libcurl前面需要很多步骤，可以参考<a href="https://blog.csdn.net/david412306524/article/details/51213104" target="_blank" rel="noopener">https://blog.csdn.net/david412306524/article/details/51213104</a> 尽量一步都不要错，所有步骤都是为了生成libcurl.lib这个库</p>
+<p>至于从网上下载的libcurl.lib能不能用我也不太清楚</p>
 
             </div>
             <hr/>
@@ -546,7 +572,7 @@ b</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.hjcode.cn/2020/02/10/python-xiang-guan-gao-ji-te-xing-de-zong-jie/">http://www.hjcode.cn/2020/02/10/python-xiang-guan-gao-ji-te-xing-de-zong-jie/</a>
+                    <a href="http://www.hjcode.cn/2020/09/15/c-li-yong-libcurl-ku-shi-xian-wen-jian-he-zi-duan-biao-dan-shang-chuan-post-fang-fa/">http://www.hjcode.cn/2020/09/15/c-li-yong-libcurl-ku-shi-xian-wen-jian-he-zi-duan-biao-dan-shang-chuan-post-fang-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -584,8 +610,12 @@ b</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/libcurl/">
+                                    <span class="chip bg-color">libcurl</span>
                                 </a>
                             
                         </div>
@@ -751,87 +781,34 @@ b</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/10/python-han-shu-zhong-de-bi-xuan-mo-ren-ke-bian-guan-jian-zi-ming-ming-can-shu/">
+                <a href="/2020/09/15/c-li-yong-libcurl-ku-shi-xian-wen-jian-he-zi-duan-biao-dan-shang-chuan-post-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Python函数中的必选/默认/可变/关键字/命名参数">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C++利用libcurl库实现文件和字段表单上传（POST方法）">
                         
-                        <span class="card-title">Python函数中的必选/默认/可变/关键字/命名参数</span>
+                        <span class="card-title">C++利用libcurl库实现文件和字段表单上传（POST方法）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python函数中的必选/默认/可变/关键字/命名参数一、默认参数def power(x, n=2):
-    s = 1
-    while n > 0:
-        n = n - 1
-        s = s * x
-    r
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/01/31/c-zhong-stl-de-rong-qi-gua-pei-qi-yi-ji-ge-rong-qi-de-fang-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="C++中STL的容器适配器以及各容器的方法">
-                        
-                        <span class="card-title">C++中STL的容器适配器以及各容器的方法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一.容器适配器1.stack需要引入的头文件：
-#include&lt;stack>
-初始化方式：
-stack&lt;int> stk;
-成员函数介绍：
-stk.empty();    //判断stack是否为空，为空返回true，否则返回
+                            最近在用libcurl实现文件和字段上传至Django服务器
+#include &lt;iostream>
+#include &lt;curl/curl.h>
+#include &lt;string.h>
+
+using namespace 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-15
                             </span>
                         <span class="publish-author">
                             
@@ -845,6 +822,7 @@ stk.empty();    //判断stack是否为空，为空返回true，否则返回
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -852,12 +830,60 @@ stk.empty();    //判断stack是否为空，为空返回true，否则返回
                         <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/STL/">
-                        <span class="chip bg-color">STL</span>
+                    <a href="/tags/libcurl/">
+                        <span class="chip bg-color">libcurl</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/17/shi-me-shi-dui-zhan-dui-he-zhan-de-qu-bie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="什么是堆、栈？堆和栈的区别">
+                        
+                        <span class="card-title">什么是堆、栈？堆和栈的区别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            栈区(stack)：由编译器自动分配释放，存放函数的参数值、局部变量值等。堆区(heap)：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收
+例程//main.cpp
+int a = 0; //全局初始化区
+int a = 0
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
